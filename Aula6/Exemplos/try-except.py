@@ -3,7 +3,7 @@
         <código passivel de erro>
     execpt Erro:
         <Código que irá trtar o erro>
-        <mensagem informando o erro encontrado>"""
+        <mensagem informando o erro encontrado> """
 import math 
 num = 400
 
@@ -127,5 +127,19 @@ except PermissionError as erro:
 except FileExistsError as erro:
     print("Erro: ", erro)
     print("Arquivo destino já existe!")
+
+# ========= Exemplo 12 ==================
+try: 
+    arquivos = os.scandir()
+    for obj in arquivos:
+        print(obj.name)
+        print(obj.path)
+        print(obj.is_dir())
+except FileNotFoundError:
+    print("Caminho não existe")
+except NotADirectoryError:
+    print("O caminho não é diretório")
+
+
 
 
